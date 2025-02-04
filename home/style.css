@@ -287,3 +287,12 @@ height: 100%;
 #prev-button {
 transform: rotate(180deg);
 }
+
+.containerGoogle {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .profile {
+    width: 100px;
+    border-radius: 50%;
+  }

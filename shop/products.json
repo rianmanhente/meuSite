@@ -7,7 +7,7 @@
     },
     {
         "id": 2,
-        "name":"CAMISA CHEIA DE MARRA",
+        "name":"CAMISA CHEIA DE 2",
         "price": 250,
         "image": "../assets/camisa.jpeg"
 
@@ -16,9 +16,7 @@
         "id": 3,
         "name":" LD03 LOUNGE CHAIR",
         "price": 290,
-        "image": "../assets/camisa.jpeg"
-
-        
+        "image": "../assets/camisa.jpeg"        
     }
 
 ]

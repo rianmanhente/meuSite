@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sintony:wght@700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sintony:wght@700&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <body>
 
     <header>
 
         <ul class="primeiraUl">
+            <li><a href="../home/index.html">HOME</a></li>
             <li><a href="../shop/index.html">LOJA</a></li>
             <li><a href="">MUSICA</a></li>
             <li><a href="">CONTATOS</a></li>
         </ul>
 
-        <a class="logo" href="">RIAN MANHENTE</a>
+        <a class="logo" href="">RIAN</a>
 
         <di class="bx bx-menu" id="menuIcon">
 
@@ -56,9 +62,12 @@
     <footer>
         <div>
             <ul class="ulFooter1">
-                <li><a class="footerIs" href="">LOJA</a></li>
+                <li><a class="footerIs" href="../home/index.html">HOME</a></li>
+                <li><a class="footerIs" href="../shop/index.html">LOJA</a></li>
                 <li><a class="footerIs" href="">MUSICA</a></li>
                 <li><a class="footerIs" href="">CONTATOS</a></li>
+                <li><a class="footerIs" href="">RIAN MEIA NOITE</a></li>
+
             </ul>
         </div>
 
@@ -72,15 +81,27 @@
         </div>
 
         <div>
-            <ul class="ulFooter2">
-                <!-- <li><a class="footerIs" href="" target="_blank"><i class='bx bxl-instagram'></i></a></li> -->
-                <!-- <li><a href="">Email: rian.manhente@gmail.com</a></li>
-                <li><a href="">telefone: 21 973923884</a></li> -->
-                <!-- <li><a class="footerIs" href="" target="_blank"><i class='bx bxl-tiktok' ></i></a></li> -->
-                <li><a class="footerIs" href="" target="_blank"><i class='bx bxl-youtube' ></i></a></li>
-                <li><a class="footerIs" href="" target="_blank"><i class='bx bxl-spotify' ></i></a></li>
-            </ul>
-        </div>
+           
+
+
+  <div class="containerGoogle">
+    <div id="g_id_onload"
+         data-client_id="46526927257-lnc6jhrrih3m5u5m79rlmlium6euokei.apps.googleusercontent.com"
+         data-callback="responseGoogle">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+    
+    <div id="user-info" style="display: none; text-align: center;">
+      <h1>Informações do Usuário</h1>
+      <img id="profile-pic" class="profile" alt="Profile">
+      <p id="user-name"></p>
+      <p id="user-email"></p>
+    </div>
+  </div>
+
+
+
+
     </footer>
        
     <script src="main.js"></script>

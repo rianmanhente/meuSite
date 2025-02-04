@@ -46,3 +46,18 @@ function prevSlider() {
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
 
+function responseGoogle(response) {
+  // Decodificar o token JWT para obter informações do perfil do usuário
+  const responsePayload = JSON.parse(atob(response.credential.split('.')[1]));
+  
+  // Pega as informações do usuário
+  const name = responsePayload.name;
+  const email = responsePayload.email;
+  const profilePic = responsePayload.picture;
+
+  // Exibe as informações do usuário
+  document.getElementById("user-info").style.display = "block";
+  document.getElementById("user-name").textContent = "Nome: " + name;
+  document.getElementById("user-email").textContent = "Email: " + email;
+  document.getElementById("profile-pic").src = profilePic;
+}

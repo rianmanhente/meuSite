@@ -18,7 +18,6 @@ let closeCart = document.querySelector('.close');
 let products = [];
 let cart = [];
 
-
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
@@ -40,7 +39,7 @@ closeCart.addEventListener('click', () => {
                 `<img src="${product.image}" alt="">
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
-                <button class="addCart">Add To Cart</button>`;
+                <button class="addCart">Adicionar no Carrinho</button>`;
                 listProductHTML.appendChild(newProduct);
             });
         }
@@ -52,6 +51,7 @@ closeCart.addEventListener('click', () => {
             addToCart(id_product);
         }
     })
+
 const addToCart = (product_id) => {
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
     if(cart.length <= 0){
@@ -157,4 +157,16 @@ const initApp = () => {
         }
     })
 }
+console.log(products)
 initApp();
+
+//ja sei fazer uma parte do banckend , é fazer esse json e colocar lá o link para fazer um get
+//e pegar todos os produtos 
+
+// a diferença é que nao vou fazer esse fetch de um json mas sim de um banco de dados (backend)
+
+const cartTest = localStorage.getItem('cart')
+console.log("test" + cartTest)
+
+
+
