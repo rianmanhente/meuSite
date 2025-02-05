@@ -1,9 +1,15 @@
 @font-face {
     font-family: 'Stress';
-    src: url('../fonts/sundrops-display-font-1702378931-0/sundropsdisplay-3zw8g.ttf');
+    src: url('../fonts/sundrops-display-font-1702378931-0/sundropsdisplay-3zw8g.ttf')
+    /* src: url('../fonts/dream-sparks-font-1702379145-0/Dream-Sparks-Shiny-BF656d6e54e06a5.ttf'); */
+    /* src: url('../fonts/lovedays-display-font-1702379710-0/Lovedays-BF6551e42ed9955.otf'); */
+    /* src: url('../fonts/paranoid-starting-font-1702379605-0/Paranoid-Starting-Demo-BF65548c3cd1afd.otf'); */
+    /* src: url('../fonts/retro-sunday-font-1702379395-0/Retro-Sunday-Font-by-Keithzo-BF6567970bcf37a.otf'); */
+    /* src: url('../fonts/retro-sunday-font-1702379395-0/Retro-Sunday-Font-by-Keithzo-BF6567970bcf37a.otf'); */
+    /* src: url('../fonts/whoopie-sunday-font-1702377877-0/WhoopieSunday-DEMO-BF656016aa417f4.otf'); */
 }
 
-/* 5266C7 */
+/*5266C7 */
 /* FDD0B5 */
 /* 001B25 */
 * {
@@ -31,7 +37,7 @@ header {
     align-items: center;
     justify-content: space-between;
     /* background-color: rgba(37, 32, 32, 0.516); */
-    background-color: #001B25;
+    /* background-color: #001B25; */
     transition: all .45s ease;
 }
 
@@ -131,10 +137,10 @@ li a{
     }
 
     .logo {
-        color: white;   
+        color: white;
         font-size: 1.6rem;
         letter-spacing: 2px;
-    
+
     }
     header {
         padding: 24px;
@@ -162,16 +168,16 @@ li a{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-    
+
     }
 
     .container-slider {
         /* height: 10vh; */
         height: 400px;
     }
-    
+
 }
-/* 
+/*
 footer {
     display: flex;
     flex-direction: row;
@@ -237,7 +243,7 @@ section {
     margin-bottom: 200px;
 }
 
-  
+
 
 
 .container-slider {
