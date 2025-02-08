@@ -7,7 +7,8 @@
     "migrate": "node src/database/migrate.js",
     "start": "node server.js",
     "seed": "node src/database/seeders/seeder",
-    "startseed": "npm run migrate && npm run seed && npm start"
+    "startseed": "npm run migrate && npm run seed && npm start",
+    "megadev": "npm install && npm run migrate && npm run seed && npm start"
   },
   "keywords": [],
   "author": "",

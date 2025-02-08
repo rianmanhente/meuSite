@@ -2,10 +2,15 @@ const { Router } = require("express");
 const router = Router();
 const CartController = require("../controllers/CartController")
 const ProductController = require("../controllers/ProductController");
-// const UserController = require("../controllers/UserController");
+const UserController = require("../controllers/UserController");
 
 //authentication 
 
+router.post("/user", UserController.create);
+router.get("/user/:id", UserController.show); 
+router.get("/user", UserController.index); 
+router.put("/user/:id", UserController.update);
+router.delete("/user/:id", UserController.destroy);
 
 router.post("/product", ProductController.create);
 router.get("/product/:id", ProductController.show); 

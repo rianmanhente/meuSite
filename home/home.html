@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="google-signin-client_id" content="531187287976-tgp0osjhvhcg14dm1snpgmpbf1f0gv0g.apps.googleusercontent.com">
 
 <body>
 
@@ -82,11 +84,11 @@
         <div>
            
 
-
   <div class="containerGoogle">
     <div id="g_id_onload"
          data-client_id="531187287976-tgp0osjhvhcg14dm1snpgmpbf1f0gv0g.apps.googleusercontent.com"
          data-callback="responseGoogle">
+         
     </div>
     <div class="g_id_signin" data-type="standard"></div>
     
@@ -100,9 +102,115 @@
 
 
 
-
     </footer>
        
-    <script src="main.js"></script>
+<script type="module" src="home.js"></script>
+
+<script type="module">
+
+      // import {api} from "../services/api.js"
+      function responseGoogle(response) {
+      // Decodificar o token JWT para obter informações do perfil do usuário
+      const responsePayload = JSON.parse(atob(response.credential.split('.')[1]));
+      
+      // Pega as informações do usuário
+      const name = responsePayload.name;
+      const email = responsePayload.email;
+      const profilePic = responsePayload.picture;
+      const token = response.credential
+    
+      console.log(token+ "TOKEN")
+    
+    //  const user = {
+    //     name: name,
+    //     email: email,
+    //     token: token
+    //   }
+    
+    //   const sendDataUserToBackend = async() => {
+    //     try { 
+    //         const sendUser = await api.post("/user", user)
+    //         console.log("Resposta Backend", sendUser)
+    //     }catch(erro) {
+    //         console.log("Erro ao enviar dados para o backend:", error);
+    //     }
+    //   }
+    
+    //   sendDataUserToBackend()
+    
+      // Exibe as informações do usuário
+      document.getElementById("user-info").style.display = "block";
+      document.getElementById("user-name").textContent = "Nome: " + name;
+      document.getElementById("user-email").textContent = "Email: " + email;
+      document.getElementById("profile-pic").src = profilePic;
+    }
+
+//     function responseGoogle(response) {
+//     try {
+//         if (!response || !response.credential) {
+//             throw new Error('Credencial não recebida do Google');
+//         }
+
+//         // Decodificar o token JWT
+//         const responsePayload = JSON.parse(atob(response.credential.split('.')[1]));
+        
+//         // Dados do usuário
+//         const user = {
+//             name: responsePayload.name,
+//             email: responsePayload.email,
+//             token: response.credential,
+//             profilePic: responsePayload.picture
+//         };
+    
+//         console.log("Dados do usuário:", user);
+
+//         // Atualizar a interface
+//         const userInfo = document.getElementById("user-info");
+//         const userName = document.getElementById("user-name");
+//         const userEmail = document.getElementById("user-email");
+//         const profilePic = document.getElementById("profile-pic");
+
+//         if (userInfo && userName && userEmail && profilePic) {
+//             userInfo.style.display = "block";
+//             userName.textContent = "Nome: " + user.name;
+//             userEmail.textContent = "Email: " + user.email;
+//             profilePic.src = user.profilePic;
+//         }
+
+//         // Enviar dados para o backend (se necessário)
+//         fetch('http://localhost:YOUR_PORT/user', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Authorization': `Bearer ${response.credential}`
+//             },
+//             body: JSON.stringify(user),
+//             credentials: 'include'
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Resposta do backend:', data);
+//         })
+//         .catch(error => {
+//             console.error('Erro ao enviar dados para o backend:', error);
+//         });
+
+//     } catch (error) {
+//         console.error("Erro ao processar resposta do Google:", error);
+//     }
+// }
+
+// // Adicionar tratamento de erro para carregamento do Google
+// window.onload = function() {
+//     if (!window.google) {
+//         console.error('Google API não carregou corretamente');
+//     }
+// }
+
+
+
+
+    </script> 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
 </html>
