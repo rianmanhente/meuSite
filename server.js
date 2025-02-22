@@ -2,32 +2,19 @@ const express = require("express");
 require("./src/config/dotenv");
 require("./src/config/sequelize");
 
+// const models = require('./src/models');
+// require("./src/models/Associations")(models);
+
 const app = express();
 const port = process.env.PORT;
 const cors = require("cors");
 
-const allowedOrigins = ["http://localhost:5500", "http://127.0.0.1:5500"];
-
-// Configuração correta do CORS
 app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: false,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500'], // permite ambas as origens
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-// Headers adicionais para segurança
-app.use((req, res, next) => {
-    res.header('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
-    res.header('Cross-Origin-Embedder-Policy', 'require-corp');
-    next();
-});
 
 const routes = require("./src/router/routes");
 

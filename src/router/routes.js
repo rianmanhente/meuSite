@@ -3,6 +3,7 @@ const router = Router();
 const CartController = require("../controllers/CartController")
 const ProductController = require("../controllers/ProductController");
 const UserController = require("../controllers/UserController");
+const CartItemController = require('../controllers/CartItemController');
 
 //authentication 
 
@@ -23,6 +24,11 @@ router.get("/cart/:id", CartController.show);
 router.get("/cart", CartController.index); 
 router.put("/cart/:id", CartController.update);
 router.delete("/cart/:id", CartController.destroy);
+
+router.post('/items', CartItemController.create);
+router.get('/items/:id', CartItemController.list);
+router.get('/items', CartItemController.index);
+router.put('/items/:id', CartItemController.update);
 
 
 module.exports = router;

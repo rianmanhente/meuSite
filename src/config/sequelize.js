@@ -28,6 +28,7 @@ module.exports = sequelize;
 require('../models/User');
 require('../models/Product');  // Se o nome do modelo é "Producto", deve ser esse mesmo
 require('../models/Cart');
+require('../models/CartItem');
 
 // Associando os modelos
 for (let mod in sequelize.models) {
